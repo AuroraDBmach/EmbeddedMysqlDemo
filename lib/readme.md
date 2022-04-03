@@ -15,3 +15,4 @@ lrwxrwxrwx 1 mach mach        17  3월  3 10:53 libmysqld.so -> libmariadbd.so.1
 -rw-r--r-- 1 mach mach     73832  3월  3 10:53 libmysqlservices.a
 drwxr-xr-x 1 mach mach      4096  3월  3 10:53 pkgconfig
 drwxr-xr-x 1 mach mach      4096  3월  3 10:53 plugin
+
