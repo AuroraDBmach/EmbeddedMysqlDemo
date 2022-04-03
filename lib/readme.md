@@ -1,8 +1,12 @@
 
 lrwxrwxrwx 1 mach mach        18  3월  3 10:53 libmariadb.a -> libmariadbclient.a
+
 lrwxrwxrwx 1 mach mach        15  3월  3 10:53 libmariadb.so -> libmariadb.so.3
+
 -rw-r--r-- 1 mach mach   1462952  3월  3 10:53 libmariadb.so.3
+
 -rw-r--r-- 1 mach mach   2811526  3월  3 10:53 libmariadbclient.a
+
 -rw-r--r-- 1 mach mach 855303980  3월  3 10:53 libmariadbd.a
 lrwxrwxrwx 1 mach mach        17  3월  3 10:53 libmariadbd.so -> libmariadbd.so.19
 -rw-r--r-- 1 mach mach 284210088  3월  3 10:53 libmariadbd.so.19
