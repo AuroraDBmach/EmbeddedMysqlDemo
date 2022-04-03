@@ -1,0 +1,159 @@
+digraph G {
+compound=true;
+"all" [shape=rectangle];
+"rcp1" [shape=oval];
+"all" -> "rcp1";
+"./bin/demo" [shape=rectangle];
+"rcp1" -> "./bin/demo";
+"rcp2" [shape=oval];
+"./bin/demo" -> "rcp2";
+"./obj/demo.o" [shape=rectangle];
+"rcp2" -> "./obj/demo.o";
+"./obj/dummy.o" [shape=rectangle];
+"rcp2" -> "./obj/dummy.o";
+subgraph cluster_recipe1{
+"gcc1" [shape=rectangle, label="gcc"];
+"Concat1" [shape=oval, label=<<B>Concat</B>>];
+"Concat1" -> "gcc1";
+"-o2" [shape=rectangle, label="-o"];
+"Concat1" -> "-o2";
+"./bin/demo3" [shape=rectangle, label="./bin/demo"];
+"Concat1" -> "./bin/demo3";
+"./obj/demo.o4" [shape=rectangle, label="./obj/demo.o"];
+"Concat1" -> "./obj/demo.o4";
+"./obj/dummy.o5" [shape=rectangle, label="./obj/dummy.o"];
+"Concat1" -> "./obj/dummy.o5";
+"-L/usr/local/mysql/lib6" [shape=rectangle, label="-L/usr/local/mysql/lib"];
+"Concat1" -> "-L/usr/local/mysql/lib6";
+"-lmysqld7" [shape=rectangle, label="-lmysqld"];
+"Concat1" -> "-lmysqld7";
+"-lpthread8" [shape=rectangle, label="-lpthread"];
+"Concat1" -> "-lpthread8";
+"-lm9" [shape=rectangle, label="-lm"];
+"Concat1" -> "-lm9";
+"-ldl10" [shape=rectangle, label="-ldl"];
+"Concat1" -> "-ldl10";
+"#11" [shape=rectangle, label="#"];
+"Concat1" -> "#11";
+"앞에12" [shape=rectangle, label="앞에"];
+"Concat1" -> "앞에12";
+"들여쓰기는13" [shape=rectangle, label="들여쓰기는"];
+"Concat1" -> "들여쓰기는13";
+"탭14" [shape=rectangle, label="탭"];
+"Concat1" -> "탭14";
+"문자임!15" [shape=rectangle, label="문자임!"];
+"Concat1" -> "문자임!15";
+"이하16" [shape=rectangle, label="이하"];
+"Concat1" -> "이하16";
+"녹색표기17" [shape=rectangle, label="녹색표기"];
+"Concat1" -> "녹색표기17";
+}
+rcp2 -> Concat1 [style=dashed, label="refers-to", lhead=cluster_recipe1]
+"run" [shape=rectangle];
+"rcp3" [shape=oval];
+"run" -> "rcp3";
+subgraph cluster_recipe2{
+"LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib18" [shape=rectangle, label="LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib"];
+"Concat2" [shape=oval, label=<<B>Concat</B>>];
+"Concat2" -> "LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib18";
+"./bin/demo19" [shape=rectangle, label="./bin/demo"];
+"Concat2" -> "./bin/demo19";
+}
+rcp3 -> Concat2 [style=dashed, label="refers-to", lhead=cluster_recipe2]
+"hint" [shape=rectangle];
+"rcp4" [shape=oval];
+"hint" -> "rcp4";
+subgraph cluster_recipe3{
+"echo20" [shape=rectangle, label="echo"];
+"Concat3" [shape=oval, label=<<B>Concat</B>>];
+"Concat3" -> "echo20";
+""to21" [shape=rectangle, label=""to"];
+"Concat3" -> ""to21";
+"exec.22" [shape=rectangle, label="exec."];
+"Concat3" -> "exec.22";
+"type23" [shape=rectangle, label="type"];
+"Concat3" -> "type23";
+"";	echo24" [shape=rectangle, label="";	echo"];
+"Concat3" -> "";	echo24";
+""LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib25" [shape=rectangle, label=""LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib"];
+"Concat3" -> ""LD_LIBRARY_PATH=/home/mach/Test/mariadb-10.1.7/embedded/lib25";
+"./bin/demo"26" [shape=rectangle, label="./bin/demo""];
+"Concat3" -> "./bin/demo"26";
+}
+rcp4 -> Concat3 [style=dashed, label="refers-to", lhead=cluster_recipe3]
+"clean" [shape=rectangle];
+"rcp5" [shape=oval];
+"clean" -> "rcp5";
+subgraph cluster_recipe4{
+"rm27" [shape=rectangle, label="rm"];
+"Concat4" [shape=oval, label=<<B>Concat</B>>];
+"Concat4" -> "rm27";
+"-f28" [shape=rectangle, label="-f"];
+"Concat4" -> "-f28";
+"./obj/demo.o29" [shape=rectangle, label="./obj/demo.o"];
+"Concat4" -> "./obj/demo.o29";
+"./obj/dummy.o30" [shape=rectangle, label="./obj/dummy.o"];
+"Concat4" -> "./obj/dummy.o30";
+"./bin/demo31" [shape=rectangle, label="./bin/demo"];
+"Concat4" -> "./bin/demo31";
+"core32" [shape=rectangle, label="core"];
+"Concat4" -> "core32";
+}
+rcp5 -> Concat4 [style=dashed, label="refers-to", lhead=cluster_recipe4]
+"rcp6" [shape=oval];
+"./obj/demo.o" -> "rcp6";
+"./src/demo.c" [shape=rectangle];
+"rcp6" -> "./src/demo.c";
+subgraph cluster_recipe5{
+"gcc33" [shape=rectangle, label="gcc"];
+"Concat5" [shape=oval, label=<<B>Concat</B>>];
+"Concat5" -> "gcc33";
+"-c34" [shape=rectangle, label="-c"];
+"Concat5" -> "-c34";
+"-Wall35" [shape=rectangle, label="-Wall"];
+"Concat5" -> "-Wall35";
+"-O236" [shape=rectangle, label="-O2"];
+"Concat5" -> "-O236";
+"-I./include37" [shape=rectangle, label="-I./include"];
+"Concat5" -> "-I./include37";
+"-I/usr/local/mysql/include/mysql38" [shape=rectangle, label="-I/usr/local/mysql/include/mysql"];
+"Concat5" -> "-I/usr/local/mysql/include/mysql38";
+"-I/usr/local/mysql/include/mysql/..39" [shape=rectangle, label="-I/usr/local/mysql/include/mysql/.."];
+"Concat5" -> "-I/usr/local/mysql/include/mysql/..39";
+"-o40" [shape=rectangle, label="-o"];
+"Concat5" -> "-o40";
+"./obj/demo.o41" [shape=rectangle, label="./obj/demo.o"];
+"Concat5" -> "./obj/demo.o41";
+"./src/demo.c42" [shape=rectangle, label="./src/demo.c"];
+"Concat5" -> "./src/demo.c42";
+}
+rcp6 -> Concat5 [style=dashed, label="refers-to", lhead=cluster_recipe5]
+"rcp7" [shape=oval];
+"./obj/dummy.o" -> "rcp7";
+"./src/dummy.c" [shape=rectangle];
+"rcp7" -> "./src/dummy.c";
+subgraph cluster_recipe6{
+"gcc43" [shape=rectangle, label="gcc"];
+"Concat6" [shape=oval, label=<<B>Concat</B>>];
+"Concat6" -> "gcc43";
+"-c44" [shape=rectangle, label="-c"];
+"Concat6" -> "-c44";
+"-Wall45" [shape=rectangle, label="-Wall"];
+"Concat6" -> "-Wall45";
+"-O246" [shape=rectangle, label="-O2"];
+"Concat6" -> "-O246";
+"-I./include47" [shape=rectangle, label="-I./include"];
+"Concat6" -> "-I./include47";
+"-I/usr/local/mysql/include/mysql48" [shape=rectangle, label="-I/usr/local/mysql/include/mysql"];
+"Concat6" -> "-I/usr/local/mysql/include/mysql48";
+"-I/usr/local/mysql/include/mysql/..49" [shape=rectangle, label="-I/usr/local/mysql/include/mysql/.."];
+"Concat6" -> "-I/usr/local/mysql/include/mysql/..49";
+"-o50" [shape=rectangle, label="-o"];
+"Concat6" -> "-o50";
+"./obj/dummy.o51" [shape=rectangle, label="./obj/dummy.o"];
+"Concat6" -> "./obj/dummy.o51";
+"./src/dummy.c52" [shape=rectangle, label="./src/dummy.c"];
+"Concat6" -> "./src/dummy.c52";
+}
+rcp7 -> Concat6 [style=dashed, label="refers-to", lhead=cluster_recipe6]
+}
