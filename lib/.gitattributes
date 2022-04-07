@@ -1,0 +1,17 @@
+libmariadbd.a filter=lfs diff=lfs merge=lfs -text
+libmysqlclient_r.a filter=lfs diff=lfs merge=lfs -text
+pkgconfig filter=lfs diff=lfs merge=lfs -text
+plugin filter=lfs diff=lfs merge=lfs -text
+libmariadb.a filter=lfs diff=lfs merge=lfs -text
+libmariadbclient.a filter=lfs diff=lfs merge=lfs -text
+libmysqlclient.a filter=lfs diff=lfs merge=lfs -text
+libmysqlclient.so filter=lfs diff=lfs merge=lfs -text
+libmysqld.so filter=lfs diff=lfs merge=lfs -text
+libmariadb.so filter=lfs diff=lfs merge=lfs -text
+libmysqlclient_r.so filter=lfs diff=lfs merge=lfs -text
+libmysqld.a filter=lfs diff=lfs merge=lfs -text
+libmysqlservices.a filter=lfs diff=lfs merge=lfs -text
+readme.md filter=lfs diff=lfs merge=lfs -text
+libmariadb.so.3 filter=lfs diff=lfs merge=lfs -text
+libmariadbd.so filter=lfs diff=lfs merge=lfs -text
+libmariadbd.so.19 filter=lfs diff=lfs merge=lfs -text
