@@ -4,6 +4,6 @@ debug.h : DEBUG() function demostration program
 */
 int main()
 {
-   DEBUG("hello");
+   DEBUG("hello world!");
    return 0;
 }
